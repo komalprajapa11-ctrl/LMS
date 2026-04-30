@@ -16,6 +16,7 @@ import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CodeEditorDialog from '@/components/learn/CodeEditorDialog';
 import QuizIcon from '@mui/icons-material/Quiz';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import Link from 'next/link';
 import { use } from 'react';
 
@@ -214,13 +215,33 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
           startIcon={<QuizIcon />}
           sx={{ 
             py: 1.5, 
+            mb: 1.5,
             borderRadius: 2, 
             fontWeight: 800, 
             backgroundColor: '#2563eb',
-            '&:hover': { backgroundColor: '#1d4ed8' }
+            '&:hover': { backgroundColor: '#1d4ed8' },
+            textTransform: 'none'
           }}
         >
           Take Quiz
+        </Button>
+        <Button
+          fullWidth
+          variant="outlined"
+          component={Link}
+          href={`/interview-questions/${subjectId}`}
+          startIcon={<ContactSupportIcon />}
+          sx={{ 
+            py: 1.5, 
+            borderRadius: 2, 
+            fontWeight: 800, 
+            borderColor: '#2563eb',
+            color: '#2563eb',
+            '&:hover': { backgroundColor: 'rgba(37, 99, 235, 0.04)' },
+            textTransform: 'none'
+          }}
+        >
+          Interview Prep
         </Button>
       </Box>
     </Box>

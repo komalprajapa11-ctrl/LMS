@@ -34,7 +34,7 @@ export default function Footer() {
                   <SchoolIcon sx={{ color: 'white', fontSize: 28 }} />
                 </Box>
                 <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-1px' }}>
-                  Technotoil
+                  VP Learning
                 </Typography>
               </Box>
               <Typography variant="body1" sx={{ color: '#94a3b8', lineHeight: 1.8, maxWidth: 340, fontSize: '1.05rem' }}>
@@ -137,7 +137,7 @@ export default function Footer() {
           gap: 3
         }}>
           <Typography variant="body2" sx={{ color: '#64748b', fontWeight: 500 }}>
-            © 2026 Technotoil Solutions. Made with ♥ for developers.
+            © 2026 VP Learning Solutions. Made with ♥ for developers.
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4 }}>
             <MuiLink href="#" sx={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', '&:hover': { color: 'white' } }}>Privacy</MuiLink>

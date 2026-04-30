@@ -13,6 +13,7 @@ import {
 import SubjectIcon from '@mui/icons-material/Subject';
 import QuizIcon from '@mui/icons-material/Quiz';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -51,9 +52,10 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { label: 'Subjects', icon: <SubjectIcon />, href: '/admin' },
-    { label: 'Manage Topics', icon: <MenuBookIcon />, href: '/admin/curriculum' },
-    { label: 'Quizzes', icon: <QuizIcon />, href: '/admin/quizzes' },
+    { label: 'Subjects',             icon: <SubjectIcon />,      href: '/admin' },
+    { label: 'Manage Topics',        icon: <MenuBookIcon />,     href: '/admin/curriculum' },
+    { label: 'Quizzes',              icon: <QuizIcon />,         href: '/admin/quizzes' },
+    { label: 'Interview Questions',  icon: <ContactSupportIcon />,  href: '/admin/interview-questions' },
   ];
 
   return (

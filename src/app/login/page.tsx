@@ -83,7 +83,7 @@ function LoginContent() {
               <SchoolIcon sx={{ fontSize: 32 }} />
             </Box>
             <Typography variant="h4" sx={{ fontWeight: 800, fontFamily: 'var(--font-heading)', letterSpacing: 1 }}>
-              TECHNOTOIL LMS
+              VP LEARNING LMS
             </Typography>
           </Box>
 
@@ -113,7 +113,7 @@ function LoginContent() {
         </Stack>
 
         <Box sx={{ position: 'absolute', bottom: 40, left: 64, opacity: 0.6 }}>
-          <Typography variant="caption">© 2026 Technotoil Solutions. All rights reserved.</Typography>
+          <Typography variant="caption">© 2026 VP Learning Solutions. All rights reserved.</Typography>
         </Box>
       </Box>
 
@@ -173,13 +173,18 @@ function LoginContent() {
                   onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   placeholder="name@company.com"
-                  variant="outlined"
+                  variant="filled"
                   slotProps={{ inputLabel: { sx: { fontWeight: 600, color: '#64748b' } } }}
                   sx={{ 
-                    '& .MuiOutlinedInput-root': { 
-                      borderRadius: 3,
-                      backgroundColor: 'white',
-                      '&:hover fieldset': { borderColor: 'var(--primary-main)' }
+                    '& .MuiFilledInput-root': { 
+                      borderRadius: '14px',
+                      backgroundColor: '#f8fafc',
+                      border: '1px solid #f1f5f9',
+                      transition: 'all 0.2s',
+                      '&:hover': { backgroundColor: 'white', borderColor: '#cbd5e1' },
+                      '&:focus-within': { backgroundColor: 'white', borderColor: 'var(--primary-main)', boxShadow: '0 0 0 4px rgba(37,99,235,0.1)' },
+                      '&:before': { display: 'none' }, 
+                      '&:after': { display: 'none' }
                     } 
                   }}
                 />
@@ -194,12 +199,17 @@ function LoginContent() {
                   onChange={(e) => setPassword(e.target.value)}
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
-                  variant="outlined"
+                  variant="filled"
                   sx={{ 
-                    '& .MuiOutlinedInput-root': { 
-                      borderRadius: 3,
-                      backgroundColor: 'white',
-                      '&:hover fieldset': { borderColor: 'var(--primary-main)' }
+                    '& .MuiFilledInput-root': { 
+                      borderRadius: '14px',
+                      backgroundColor: '#f8fafc',
+                      border: '1px solid #f1f5f9',
+                      transition: 'all 0.2s',
+                      '&:hover': { backgroundColor: 'white', borderColor: '#cbd5e1' },
+                      '&:focus-within': { backgroundColor: 'white', borderColor: 'var(--primary-main)', boxShadow: '0 0 0 4px rgba(37,99,235,0.1)' },
+                      '&:before': { display: 'none' }, 
+                      '&:after': { display: 'none' }
                     } 
                   }}
                   slotProps={{

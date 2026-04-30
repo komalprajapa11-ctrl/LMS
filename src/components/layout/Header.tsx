@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  Typography, 
-  Button, 
-  IconButton, 
-  Box, 
-  Container, 
-  Avatar, 
-  Menu, 
-  MenuItem, 
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Box,
+  Container,
+  Avatar,
+  Menu,
+  MenuItem,
   Divider,
   InputBase,
   alpha,
@@ -107,10 +107,10 @@ export default function Header() {
   const NavButton = ({ href, children, admin = false }: { href: string, children: React.ReactNode, admin?: boolean }) => {
     const isActive = pathname === href;
     return (
-      <Button 
-        component={Link} 
-        href={href} 
-        sx={{ 
+      <Button
+        component={Link}
+        href={href}
+        sx={{
           px: 2,
           py: 0.8,
           borderRadius: '10px',
@@ -131,8 +131,8 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky" elevation={0} sx={{ 
-      backgroundColor: 'rgba(255, 255, 255, 0.85)', 
+    <AppBar position="sticky" elevation={0} sx={{
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
       backdropFilter: 'blur(16px)',
       color: 'var(--text-primary)',
       borderBottom: '1px solid #eef2f6',
@@ -143,10 +143,10 @@ export default function Header() {
           {/* Logo Section */}
           <Link href="/" style={{ textDecoration: 'none' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mr: 6 }}>
-              <Box sx={{ 
-                p: 1, 
-                borderRadius: '12px', 
-                background: 'var(--grad-primary)', 
+              <Box sx={{
+                p: 1,
+                borderRadius: '12px',
+                background: 'var(--grad-primary)',
                 color: 'white',
                 display: 'flex',
                 mr: 1.5,
@@ -166,7 +166,7 @@ export default function Header() {
                   fontSize: '1.4rem'
                 }}
               >
-                Technotoil
+                VP Learning
               </Typography>
             </Box>
           </Link>
@@ -174,7 +174,7 @@ export default function Header() {
           {/* Navigation Links */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 1.5 }}>
             <NavButton href="/">Dashboard</NavButton>
-            <NavButton href="/courses">My Courses</NavButton>
+
             {(session?.user as any)?.role === 'ADMIN' && (
               <NavButton href="/admin">Admin Panel</NavButton>
             )}
@@ -196,8 +196,8 @@ export default function Header() {
 
           {/* Right Section: Actions & User */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', gap: 2 }}>
-            <IconButton sx={{ 
-              color: 'var(--text-secondary)', 
+            <IconButton sx={{
+              color: 'var(--text-secondary)',
               backgroundColor: '#f8fafc',
               '&:hover': { backgroundColor: '#f1f5f9' }
             }}>
@@ -205,11 +205,11 @@ export default function Header() {
             </IconButton>
 
             {!session ? (
-              <Button 
-                component={Link} 
-                href="/login" 
-                variant="contained" 
-                sx={{ 
+              <Button
+                component={Link}
+                href="/login"
+                variant="contained"
+                sx={{
                   borderRadius: '12px',
                   textTransform: 'none',
                   fontWeight: 800,
@@ -226,8 +226,8 @@ export default function Header() {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <Button
                   onClick={handleMenu}
-                  sx={{ 
-                    p: 0.5, 
+                  sx={{
+                    p: 0.5,
                     pl: 1.5,
                     borderRadius: '50px',
                     backgroundColor: '#f8fafc',
@@ -240,9 +240,9 @@ export default function Header() {
                   <Typography variant="body2" sx={{ fontWeight: 700, mr: 1, display: { xs: 'none', sm: 'block' } }}>
                     {session.user?.name?.split(' ')[0]}
                   </Typography>
-                  <Avatar sx={{ 
-                    width: 32, 
-                    height: 32, 
+                  <Avatar sx={{
+                    width: 32,
+                    height: 32,
                     background: 'var(--grad-primary)',
                     fontSize: '0.85rem',
                     fontWeight: 800,
@@ -252,7 +252,7 @@ export default function Header() {
                   </Avatar>
                   <KeyboardArrowDownIcon sx={{ ml: 0.5, color: '#94a3b8', fontSize: 18 }} />
                 </Button>
-                
+
                 <Menu
                   anchorEl={anchorEl}
                   open={Boolean(anchorEl)}
@@ -292,19 +292,19 @@ export default function Header() {
                     </Typography>
                   </Box>
                   <Divider sx={{ mx: 2, mb: 1, opacity: 0.6 }} />
-                  
+
                   <MenuItem>
                     <PersonOutlinedIcon sx={{ color: '#64748b', fontSize: 20 }} />
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>Profile Settings</Typography>
                   </MenuItem>
-                  
+
                   <MenuItem>
                     <BadgeOutlinedIcon sx={{ color: '#64748b', fontSize: 20 }} />
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>My Certificates</Typography>
                   </MenuItem>
-                  
+
                   <Divider sx={{ mx: 2, my: 1, opacity: 0.6 }} />
-                  
+
                   <MenuItem onClick={() => signOut()} sx={{ color: '#ef4444' }}>
                     <LogoutOutlinedIcon sx={{ fontSize: 20 }} />
                     <Typography variant="body2" sx={{ fontWeight: 700 }}>Logout</Typography>

@@ -239,7 +239,11 @@ export default function AdminQuizzesPage() {
                 </Stack>
               </Paper>
             ))}
-            <Button startIcon={<AddCircleOutlinedIcon />} onClick={addQuestion}>Add Question</Button>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Button variant="outlined" startIcon={<AddCircleOutlinedIcon />} onClick={addQuestion}>
+                Add Question
+              </Button>
+            </Box>
           </Stack>
         </DialogContent>
         <DialogActions sx={{ p: 3, backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>

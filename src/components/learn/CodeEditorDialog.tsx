@@ -80,7 +80,7 @@ export default function CodeEditorDialog({ open, onClose, initialCode, language 
       }}>
         <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>
-            Technotoil Editor v1.0
+            VP Learning Editor v1.0
           </Typography>
           <Divider orientation="vertical" flexItem sx={{ borderColor: '#444' }} />
           <Button 
