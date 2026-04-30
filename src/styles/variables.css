@@ -1,0 +1,51 @@
+:root {
+  /* Primary Colors */
+  --primary-main: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e40af;
+  --primary-contrast: #ffffff;
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  --grad-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --grad-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+  /* Background Colors */
+  --bg-default: #f8fafc;
+  --bg-paper: #ffffff;
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-disabled: #94a3b8;
+
+  /* Fonts */
+  --font-main: var(--font-inter), 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-heading: var(--font-outfit), var(--font-inter), sans-serif;
+
+  /* Spacing & Borders */
+  --border-radius: 12px;
+  --sidebar-width: 260px;
+  --header-height: 64px;
+}
+
+[data-theme='dark'] {
+  --bg-default: #0a1929;
+  --bg-paper: #102031;
+  --text-primary: #ffffff;
+  --text-secondary: #b2bac2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
