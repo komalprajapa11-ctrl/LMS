@@ -104,7 +104,7 @@ function LoginContent() {
               'Progress Tracking & Achievements',
               'Expert-curated Course Content'
             ].map((text, i) => (
-              <Stack key={i} direction="row" spacing={2} alignItems="center">
+              <Stack key={i} direction="row" spacing={2} sx={{ alignItems: 'center' }}>
                 <CheckCircleOutlinedIcon sx={{ color: '#93c5fd' }} />
                 <Typography variant="body1" sx={{ fontWeight: 500 }}>{text}</Typography>
               </Stack>
@@ -174,7 +174,7 @@ function LoginContent() {
                   type="email"
                   placeholder="name@company.com"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
+                  slotProps={{ inputLabel: { sx: { fontWeight: 600, color: '#64748b' } } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,
@@ -195,7 +195,6 @@ function LoginContent() {
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,
@@ -203,14 +202,17 @@ function LoginContent() {
                       '&:hover fieldset': { borderColor: 'var(--primary-main)' }
                     } 
                   }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" sx={{ color: '#94a3b8' }}>
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
+                  slotProps={{
+                    inputLabel: { sx: { fontWeight: 600, color: '#64748b' } },
+                    input: {
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" sx={{ color: '#94a3b8' }}>
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }
                   }}
                 />
                

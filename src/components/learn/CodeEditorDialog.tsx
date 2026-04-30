@@ -58,12 +58,14 @@ export default function CodeEditorDialog({ open, onClose, initialCode, language 
       maxWidth={false} 
       open={open} 
       onClose={onClose}
-      PaperProps={{
-        sx: { 
-          borderRadius: 0,
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column'
+      slotProps={{
+        paper: {
+          sx: { 
+            borderRadius: 0,
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column'
+          }
         }
       }}
     >
@@ -76,7 +78,7 @@ export default function CodeEditorDialog({ open, onClose, initialCode, language 
         alignItems: 'center', 
         justifyContent: 'space-between' 
       }}>
-        <Stack direction="row" spacing={2} alignItems="center">
+        <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1rem' }}>
             Technotoil Editor v1.0
           </Typography>

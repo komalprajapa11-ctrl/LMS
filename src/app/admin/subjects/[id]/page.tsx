@@ -187,9 +187,9 @@ export default function TopicManagementPage({ params }: { params: Promise<{ id: 
         <Paper elevation={0} sx={{ borderRadius: 3, border: '1px solid #e2e8f0', overflow: 'hidden' }}>
           {/* Header */}
           <Box sx={styles.header}>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="space-between" alignItems={{ sm: 'center' }}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ justifyContent: 'space-between', alignItems: { sm: 'center' } }}>
               <Box>
-                <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 0.5 }}>
+                <Stack direction="row" spacing={1.5} sx={{ mb: 0.5, alignItems: 'center' }}>
                   <MenuBookIcon sx={{ color: 'var(--primary-main)' }} />
                   <Typography variant="h5" sx={{ fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
                     {subject?.name || 'Loading...'}
@@ -270,7 +270,7 @@ export default function TopicManagementPage({ params }: { params: Promise<{ id: 
                             p: 2, borderRadius: 2, border: '1px solid #f1f5f9',
                             borderLeft: `4px solid ${sectionColors[s.type] === '#f3f0ff' ? '#7c3aed' : sectionColors[s.type] === '#ecfdf5' ? '#059669' : '#2563eb'}` 
                           }}>
-                            <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                            <Stack direction="row" spacing={1} sx={{ mb: 1, alignItems: 'center' }}>
                               {sectionIcon[s.type]}
                               <Typography variant="caption" sx={{ fontWeight: 700, textTransform: 'uppercase' }}>{s.type}</Typography>
                             </Stack>
@@ -305,7 +305,7 @@ export default function TopicManagementPage({ params }: { params: Promise<{ id: 
 
       {/* Preview Dialog */}
       <Dialog open={previewOpen} onClose={() => setPreviewOpen(false)} maxWidth="md" fullWidth
-        PaperProps={{ sx: { borderRadius: 3, overflow: 'hidden' } }}>
+        slotProps={{ paper: { sx: { borderRadius: 3, overflow: 'hidden' } } }}>
         <Box sx={{ px: 3, py: 2, background: 'linear-gradient(135deg, var(--primary-dark), var(--primary-main))',
           color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h6" sx={{ fontWeight: 700 }}>Preview: {previewTopic?.title}</Typography>
@@ -359,7 +359,7 @@ export default function TopicManagementPage({ params }: { params: Promise<{ id: 
 
       {/* Delete Confirm */}
       <Dialog open={deleteOpen} onClose={() => setDeleteOpen(false)} maxWidth="xs" fullWidth
-        PaperProps={{ sx: { borderRadius: 3 } }}>
+        slotProps={{ paper: { sx: { borderRadius: 3 } } }}>
         <Box sx={{ p: 3, textAlign: 'center' }}>
           <Box sx={{ width: 56, height: 56, borderRadius: '50%', mx: 'auto', mb: 2,
             display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(211,47,47,0.08)' }}>
@@ -369,7 +369,7 @@ export default function TopicManagementPage({ params }: { params: Promise<{ id: 
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
             Delete <strong>"{deletingTopic?.title}"</strong> and all its sections? This cannot be undone.
           </Typography>
-          <Stack direction="row" spacing={2} justifyContent="center">
+          <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
             <Button variant="outlined" onClick={() => setDeleteOpen(false)} disabled={deleting}>Cancel</Button>
             <Button variant="contained" color="error" onClick={handleDelete} disabled={deleting}>
               {deleting ? 'Deleting...' : 'Delete'}

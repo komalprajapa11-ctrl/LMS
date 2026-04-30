@@ -157,7 +157,7 @@ function DeleteConfirmDialog({
   loading: boolean;
 }) {
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
+    <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth slotProps={{ paper: { sx: { borderRadius: 3 } } }}>
       <Box sx={{ p: 3, textAlign: 'center' }}>
         <Box sx={{
           width: 56, height: 56, borderRadius: '50%', mx: 'auto', mb: 2,
@@ -170,7 +170,7 @@ function DeleteConfirmDialog({
         <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
           Are you sure you want to delete <strong>"{subjectName}"</strong>? This action cannot be undone.
         </Typography>
-        <Stack direction="row" spacing={2} justifyContent="center">
+        <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
           <Button variant="outlined" onClick={onClose} disabled={loading} sx={{ px: 3 }}>Cancel</Button>
           <Button variant="contained" color="error" onClick={onConfirm} disabled={loading} sx={{ px: 3 }}>
             {loading ? 'Deleting...' : 'Delete'}
@@ -224,10 +224,10 @@ function SubjectDialog({
       onClose={onClose}
       maxWidth="sm"
       fullWidth
-      PaperProps={{ sx: { borderRadius: 3, overflow: 'hidden' } }}
+      slotProps={{ paper: { sx: { borderRadius: 3, overflow: 'hidden' } } }}
     >
       <Box sx={styles.dialogTitle}>
-        <Stack direction="row" spacing={1.5} alignItems="center">
+        <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
           <MenuBookIcon sx={{ fontSize: 22 }} />
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1.05rem' }}>
             {mode === 'add' ? 'Add New Subject' : 'Edit Subject'}
@@ -443,7 +443,7 @@ export default function AdminDashboard() {
             <Paper elevation={0} sx={styles.mainPaper}>
               {/* Header Bar */}
               <Box sx={styles.mainHeader}>
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="space-between" alignItems={{ xs: 'stretch', sm: 'center' }}>
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ justifyContent: 'space-between', alignItems: { xs: 'stretch', sm: 'center' } }}>
                   <Box>
                     <Typography variant="h5" sx={{ fontWeight: 800, fontFamily: 'var(--font-heading)', mb: 0.5 }}>
                       Subjects
@@ -517,7 +517,7 @@ export default function AdminDashboard() {
                     <Divider />
                     {/* Inline Topic Manager */}
                     <Box sx={{ p: 0 }}>
-                       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ px: 3, py: 2 }}>
+                       <Stack direction="row" spacing={2} sx={{ px: 3, py: 2, justifyContent: 'space-between', alignItems: 'center' }}>
                          <Typography variant="h6" sx={{ fontWeight: 800 }}>
                            {selectedSubject.name} Topics
                          </Typography>
@@ -572,7 +572,7 @@ export default function AdminDashboard() {
                       <Box sx={{ px: 3, py: 1 }}>
                         {[1, 2, 3, 4].map((i) => (
                           <Box key={i} sx={{ py: 2, borderBottom: '1px solid #f1f5f9' }}>
-                            <Stack direction="row" spacing={2} alignItems="center">
+                            <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
                               <Skeleton variant="rounded" width={32} height={32} sx={{ borderRadius: '8px' }} />
                               <Box sx={{ flex: 1 }}>
                                 <Skeleton variant="text" width="40%" height={24} />

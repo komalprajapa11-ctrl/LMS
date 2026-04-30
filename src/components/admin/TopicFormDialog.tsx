@@ -51,7 +51,7 @@ function getSectionMeta(type: string) {
   return SECTION_TYPES.find(s => s.value === type) || SECTION_TYPES[0];
 }
 
-export default function TopicFormDialog({ open, mode, loading, initialData, onClose, onSave }: TopicFormDialogProps) {
+export default function TopicFormDialog({ open, mode, loading, initialData, parentId, onClose, onSave }: TopicFormDialogProps) {
   const [title, setTitle] = useState('');
   const [sections, setSections] = useState<Section[]>([]);
   const [titleError, setTitleError] = useState('');
@@ -102,14 +102,14 @@ export default function TopicFormDialog({ open, mode, loading, initialData, onCl
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth
-      PaperProps={{ sx: { borderRadius: 3, overflow: 'hidden', maxHeight: '90vh' } }}>
+      slotProps={{ paper: { sx: { borderRadius: 3, overflow: 'hidden', maxHeight: '90vh' } } }}>
       {/* Dialog Header */}
       <Box sx={{
         px: 3, py: 2.5,
         background: 'linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-main) 100%)',
         color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        <Stack direction="row" spacing={1.5} alignItems="center">
+        <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
           <MenuBookIcon sx={{ fontSize: 22 }} />
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1.05rem' }}>
             {mode === 'add' ? 'Add New Topic' : 'Edit Topic'}
@@ -169,7 +169,7 @@ export default function TopicFormDialog({ open, mode, loading, initialData, onCl
                   px: 2, py: 1, backgroundColor: meta.bg,
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
-                  <Stack direction="row" spacing={1} alignItems="center">
+                  <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                     {meta.icon}
                     <Typography variant="caption" sx={{ fontWeight: 700, color: meta.color, textTransform: 'uppercase' }}>
                       {meta.label}

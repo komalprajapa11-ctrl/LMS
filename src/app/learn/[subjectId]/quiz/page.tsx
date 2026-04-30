@@ -107,13 +107,13 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ subjectI
                   transition: 'all 0.2s',
                   '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 12px 24px rgba(0,0,0,0.05)' }
                 }}>
-                  <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+                  <Stack direction="row" spacing={2} sx={{ mb: 2, justifyContent: 'space-between', alignItems: 'center' }}>
                     <Chip label={quiz.difficulty} size="small" sx={{ 
                       fontWeight: 800, 
                       backgroundColor: quiz.difficulty === 'ADVANCED' ? '#fee2e2' : quiz.difficulty === 'INTERMEDIATE' ? '#fffbeb' : '#ecfdf5',
                       color: quiz.difficulty === 'ADVANCED' ? '#991b1b' : quiz.difficulty === 'INTERMEDIATE' ? '#92400e' : '#065f46'
                     }} />
-                    <Stack direction="row" spacing={1} alignItems="center">
+                    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                       <TimerIcon sx={{ fontSize: 18, color: '#64748b' }} />
                       <Typography variant="caption" sx={{ fontWeight: 700, color: '#64748b' }}>{quiz.questions.length * 2} MINS</Typography>
                     </Stack>
@@ -153,7 +153,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ subjectI
 
             <Divider sx={{ mb: 4 }} />
 
-            <Stack direction="row" spacing={2} justifyContent="center">
+            <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
               <Button variant="outlined" onClick={() => setQuizStarted(false)} sx={{ px: 4, py: 1.5, borderRadius: 2, fontWeight: 700 }}>
                 Other Quizzes
               </Button>
@@ -174,7 +174,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ subjectI
       <Header />
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Box sx={{ mb: 4 }}>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+          <Stack direction="row" sx={{ mb: 2, justifyContent: 'space-between', alignItems: 'center' }}>
             <Typography variant="subtitle2" sx={{ fontWeight: 800, color: '#64748b' }}>
               QUESTION {currentQuestionIdx + 1} OF {activeQuiz?.questions.length}
             </Typography>

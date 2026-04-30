@@ -122,7 +122,7 @@ export default function CurriculumManagementPage() {
           
           <Box sx={{ flex: 1 }}>
             <Paper elevation={0} sx={{ p: 4, borderRadius: 3, border: '1px solid #e2e8f0' }}>
-              <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
+              <Stack direction="row" spacing={2} sx={{ mb: 4, justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>
                   <Typography variant="h4" sx={{ fontWeight: 900, mb: 1, letterSpacing: '-1px' }}>Curriculum Management</Typography>
                   <Typography variant="body2" color="text.secondary">Design and organize your course topics and lessons</Typography>
@@ -182,7 +182,7 @@ export default function CurriculumManagementPage() {
                         backgroundColor: 'white'
                       }}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                          <Stack direction="row" alignItems="center" spacing={2} sx={{ width: '100%', pr: 2 }}>
+                          <Stack direction="row" spacing={2} sx={{ width: '100%', pr: 2, alignItems: 'center' }}>
                             <Chip label={idx + 1} size="small" sx={{ fontWeight: 800, backgroundColor: '#f1f5f9' }} />
                             <Typography sx={{ fontWeight: 700, flex: 1 }}>{topic.title}</Typography>
                             <Stack direction="row" spacing={1}>
@@ -226,7 +226,7 @@ export default function CurriculumManagementPage() {
                                   borderRadius: 2,
                                   borderLeft: '4px solid #2563eb'
                                 }}>
-                                  <Stack direction="row" alignItems="center" spacing={2} sx={{ width: '100%' }}>
+                                  <Stack direction="row" spacing={2} sx={{ width: '100%', alignItems: 'center' }}>
                                     <SubtitlesIcon sx={{ color: '#64748b', fontSize: 18 }} />
                                     <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>{child.title}</Typography>
                                     <Stack direction="row" spacing={1}>

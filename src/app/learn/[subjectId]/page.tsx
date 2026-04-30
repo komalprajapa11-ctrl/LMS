@@ -130,11 +130,13 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
                 >
                   <ListItemText
                     primary={parent.title}
-                    primaryTypographyProps={{
-                      sx: {
-                        fontWeight: isParentActive ? 800 : 600,
-                        fontSize: '0.95rem',
-                        color: isParentActive ? '#0f172a' : '#475569',
+                    slotProps={{
+                      primary: {
+                        sx: {
+                          fontWeight: isParentActive ? 800 : 600,
+                          fontSize: '0.95rem',
+                          color: isParentActive ? '#0f172a' : '#475569',
+                        }
                       }
                     }}
                   />
@@ -181,11 +183,13 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
                         >
                           <ListItemText
                             primary={child.title}
-                            primaryTypographyProps={{
-                              sx: {
-                                fontWeight: isChildActive ? 700 : 500,
-                                fontSize: '0.88rem',
-                                color: isChildActive ? '#2563eb' : '#64748b',
+                            slotProps={{
+                              primary: {
+                                sx: {
+                                  fontWeight: isChildActive ? 700 : 500,
+                                  fontSize: '0.88rem',
+                                  color: isChildActive ? '#2563eb' : '#64748b',
+                                }
                               }
                             }}
                           />
@@ -273,7 +277,7 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
               <Box>
                 {/* Topic Header */}
                 <Box sx={{ mb: 4 }}>
-                  <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <Stack direction="row" spacing={1} sx={{ mb: 1, alignItems: 'center' }}>
                     {isMobile && (
                       <IconButton onClick={() => setSidebarOpen(true)} sx={{ ml: -1 }}>
                         <MenuIcon />
@@ -319,7 +323,7 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
 
                       {section.type === 'CODE' && (
                         <Box sx={{ my: 3, backgroundColor: '#1e1e1e', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                          <Box sx={{ px: 2, py: 1, backgroundColor: '#2d2d2d', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #404040' }}>
+                          <Box sx={{ px: 2, py: 1, backgroundColor: '#2d2d2d', display: 'flex', borderBottom: '1px solid #404040', justifyContent: 'space-between', alignItems: 'center' }}>
                             <Typography variant="caption" sx={{ color: '#9ca3af', fontWeight: 600, textTransform: 'uppercase' }}>
                               {section.language || 'Code'} Example
                             </Typography>
@@ -378,7 +382,7 @@ export default function LearnPage({ params }: { params: Promise<{ subjectId: str
 
                 {/* Navigation Buttons */}
                 <Divider sx={{ mb: 4 }} />
-                <Stack direction="row" justifyContent="space-between" spacing={2} sx={{ mb: 6 }}>
+                <Stack direction="row" spacing={2} sx={{ mb: 6, justifyContent: 'space-between' }}>
                   <Button
                     variant="outlined"
                     startIcon={<ChevronLeftIcon />}

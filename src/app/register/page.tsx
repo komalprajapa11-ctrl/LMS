@@ -115,7 +115,7 @@ export default function RegisterPage() {
               'Certificate of completion',
               '24/7 Community support'
             ].map((text, i) => (
-              <Stack key={i} direction="row" spacing={2} alignItems="center">
+              <Stack key={i} direction="row" spacing={2} sx={{ alignItems: 'center' }}>
                 <CheckCircleOutlinedIcon sx={{ color: '#93c5fd' }} />
                 <Typography variant="body1" sx={{ fontWeight: 500 }}>{text}</Typography>
               </Stack>
@@ -179,7 +179,7 @@ export default function RegisterPage() {
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="John Doe"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
+                  slotProps={{ inputLabel: { sx: { fontWeight: 600, color: '#64748b' } } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                   type="email"
                   placeholder="name@company.com"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
+                  slotProps={{ inputLabel: { sx: { fontWeight: 600, color: '#64748b' } } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,
@@ -221,7 +221,6 @@ export default function RegisterPage() {
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,
@@ -229,14 +228,17 @@ export default function RegisterPage() {
                       '&:hover fieldset': { borderColor: 'var(--primary-main)' }
                     } 
                   }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" sx={{ color: '#94a3b8' }}>
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
+                  slotProps={{
+                    inputLabel: { sx: { fontWeight: 600, color: '#64748b' } },
+                    input: {
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" sx={{ color: '#94a3b8' }}>
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }
                   }}
                 />
               </Box>
@@ -251,7 +253,7 @@ export default function RegisterPage() {
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
                   variant="outlined"
-                  InputLabelProps={{ sx: { fontWeight: 600, color: '#64748b' } }}
+                  slotProps={{ inputLabel: { sx: { fontWeight: 600, color: '#64748b' } } }}
                   sx={{ 
                     '& .MuiOutlinedInput-root': { 
                       borderRadius: 3,

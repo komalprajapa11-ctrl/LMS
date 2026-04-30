@@ -258,25 +258,27 @@ export default function Header() {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                   onClick={handleClose}
-                  PaperProps={{
-                    elevation: 0,
-                    sx: {
-                      overflow: 'visible',
-                      filter: 'drop-shadow(0px 10px 25px rgba(0,0,0,0.1))',
-                      mt: 1.5,
-                      borderRadius: '16px',
-                      minWidth: 240,
-                      border: '1px solid #eef2f6',
-                      '& .MuiMenuItem-root': {
-                        px: 2,
-                        py: 1.5,
-                        borderRadius: '10px',
-                        mx: 1,
-                        my: 0.5,
-                        gap: 2,
-                        '&:hover': { backgroundColor: '#f8fafc' }
+                  slotProps={{
+                    paper: {
+                      elevation: 0,
+                      sx: {
+                        overflow: 'visible',
+                        filter: 'drop-shadow(0px 10px 25px rgba(0,0,0,0.1))',
+                        mt: 1.5,
+                        borderRadius: '16px',
+                        minWidth: 240,
+                        border: '1px solid #eef2f6',
+                        '& .MuiMenuItem-root': {
+                          px: 2,
+                          py: 1.5,
+                          borderRadius: '10px',
+                          mx: 1,
+                          my: 0.5,
+                          gap: 2,
+                          '&:hover': { backgroundColor: '#f8fafc' }
+                        },
                       },
-                    },
+                    }
                   }}
                   transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                   anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}

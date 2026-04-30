@@ -13,7 +13,6 @@ import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import QuizIcon from '@mui/icons-material/Quiz';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface Question {
@@ -133,7 +132,7 @@ export default function AdminQuizzesPage() {
           
           <Box sx={{ flex: 1 }}>
             <Paper elevation={0} sx={{ p: 4, borderRadius: 3, border: '1px solid #e2e8f0' }}>
-              <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
+              <Stack direction="row" spacing={2} sx={{ mb: 4, justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>
                   <Typography variant="h4" sx={{ fontWeight: 900, mb: 1, letterSpacing: '-1px' }}>Quiz Management</Typography>
                   <Typography variant="body2" color="text.secondary">Create and manage assessments for all subjects</Typography>
@@ -154,9 +153,9 @@ export default function AdminQuizzesPage() {
                 <Stack spacing={2}>
                   {quizzes.map((quiz) => (
                     <Paper key={quiz._id} variant="outlined" sx={{ p: 3, borderRadius: 3, transition: '0.2s', '&:hover': { borderColor: '#2563eb' } }}>
-                      <Stack direction="row" justifyContent="space-between" alignItems="center">
+                      <Stack direction="row" spacing={2} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
-                          <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                          <Stack direction="row" spacing={1} sx={{ mb: 1, alignItems: 'center' }}>
                             <Chip label={subjects.find(s => s._id === quiz.subjectId)?.name || 'Subject'} size="small" color="primary" sx={{ fontWeight: 700 }} />
                             <Chip label={quiz.difficulty} size="small" variant="outlined" sx={{ fontWeight: 700 }} />
                           </Stack>
@@ -187,7 +186,7 @@ export default function AdminQuizzesPage() {
       </Container>
 
       {/* Add/Edit Quiz Dialog */}
-      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="md" fullWidth PaperProps={{ sx: { borderRadius: 3 } }}>
+      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="md" fullWidth slotProps={{ paper: { sx: { borderRadius: 3 } } }}>
         <DialogTitle component="div" sx={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h6" sx={{ fontWeight: 800 }}>{dialogMode === 'add' ? 'Create New Quiz' : 'Edit Quiz'}</Typography>
           <IconButton onClick={() => setDialogOpen(false)}><CloseIcon /></IconButton>

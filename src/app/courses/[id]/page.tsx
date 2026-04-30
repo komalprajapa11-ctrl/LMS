@@ -45,7 +45,7 @@ export default function CourseDetailPage() {
       <Container maxWidth="xl" sx={{ py: 6 }}>
         <Grid container spacing={4}>
           {/* Main Content Area */}
-          <Grid xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Paper elevation={0} sx={{ p: 4, borderRadius: 3, border: '1px solid #e2e8f0', mb: 4 }}>
               <Stack direction="row" spacing={2} sx={{ mb: 2, alignItems: 'center' }}>
                 <Chip label="MERN Stack" color="primary" size="small" />
@@ -77,7 +77,7 @@ export default function CourseDetailPage() {
           </Grid>
 
           {/* Sidebar Area */}
-          <Grid xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             {/* Notes Section - Only for Logged In Users */}
             <Paper elevation={0} sx={{ p: 3, borderRadius: 3, border: '1px solid #e2e8f0', mb: 4 }}>
               <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -111,8 +111,10 @@ export default function CourseDetailPage() {
                         <ListItemText 
                           primary={n.text} 
                           secondary={n.date}
-                          primaryTypographyProps={{ variant: 'body2' }}
-                          secondaryTypographyProps={{ variant: 'caption' }}
+                          slotProps={{
+                            primary: { variant: 'body2' },
+                            secondary: { variant: 'caption' }
+                          }}
                         />
                       </ListItem>
                     ))}
